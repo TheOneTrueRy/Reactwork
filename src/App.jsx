@@ -7,18 +7,26 @@ export function App() {
 
   return (
     <div className="App" id="app">
-      <header>
-        <Navbar />
-      </header>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-2">
 
-      <main>
-        <Outlet />
-      </main>
+          </div>
+          <div className="col-10">
+            <div className="row">
+              <div className="col-12 g-0">
+                <Navbar />
+              </div>
+              <div className="col-10 g-0">
+                <Outlet />
+              </div>
+              <div className="col-2 g-0">
 
-      <footer className="bg-dark text-light text-center p-3 ">
-        Made with 💖 by CodeWorks
-      </footer>
-
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
