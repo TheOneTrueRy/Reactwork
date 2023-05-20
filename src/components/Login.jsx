@@ -16,7 +16,7 @@ function Login() {
   }
 
   const notAuthenticated = (
-    <button className="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0" onClick={login}>Login</button>
+    <button className="btn btn-dark selectable text-success text-uppercase my-2 my-lg-0" onClick={login}>Login</button>
   )
 
   const authenticated = (

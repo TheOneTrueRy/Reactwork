@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { Navbar } from './components/Navbar.jsx'
+import Sidebar from "./components/Sidebar.jsx"
 
 
 export function App() {
@@ -8,9 +9,11 @@ export function App() {
   return (
     <div className="App" id="app">
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-2">
-
+        <div className="row vh-100">
+          <div className="col-2 g-0">
+            <div className="row h-100">
+              <Sidebar />
+            </div>
           </div>
           <div className="col-10">
             <div className="row">

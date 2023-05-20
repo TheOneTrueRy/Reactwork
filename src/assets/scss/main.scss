@@ -37,6 +37,8 @@ select {
 }
 
 form:invalid button[type="submit"] {
-  filter: grayscale(1);
+  border: none;
+  color: rgba(255, 255, 255, 0.233);
+  box-shadow: none;
   pointer-events: none;
 }
