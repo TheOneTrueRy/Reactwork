@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../assets/img/cw-logo.png';
 import Login from "./Login.jsx";
 
 export function Navbar() {
@@ -8,7 +7,7 @@ export function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <Link className="navbar-brand d-flex" to={''}>
         <div className="d-flex flex-column align-items-center">
-          <img alt="logo" src={logo} height="45" />
+          <img alt="logo" src={`https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png`} height="45" />
         </div>
       </Link>
       <button
@@ -22,7 +21,14 @@ export function Navbar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarText">
+      <div>
+        <Link to={'Home'} className="text-light">
+        <span className="fs-1">
+          Reactwork
+        </span>
+        </Link>
+      </div>
+      {/* <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav me-auto">
           <li>
             <Link to={'About'} className="btn text-success lighten-30 selectable text-uppercase">
@@ -30,8 +36,7 @@ export function Navbar() {
             </Link>
           </li>
         </ul>
-        <Login />
-      </div >
+      </div > */}
     </nav >
   )
 }
