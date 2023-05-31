@@ -10,8 +10,8 @@ export function App() {
     <div className="App" id="app">
       <div className="container-fluid">
         <div className="row">
-          <div className="col-2 g-0 bg-light elevation-2">
-            <div className="row h-100">
+          <div className="col-2 ps-3">
+            <div className="row h-100 bg-light elevation-2 pb-4">
               <Sidebar />
             </div>
           </div>
