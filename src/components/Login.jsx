@@ -21,7 +21,7 @@ function Login() {
 
   const authenticated = (
     <div className="my-2 my-lg-0">
-      <img src={AppState.account?.picture || AppState.user?.picture} alt="account photo" height="40" className="rounded selectable no-select" data-bs-toggle="dropdown"
+      <img src={AppState.account?.picture || AppState.user?.picture} alt="account photo" className="rounded-circle selectable no-select pfp border border-dark elevation-1" data-bs-toggle="dropdown"
         aria-expanded="false" />
 
       <div className="dropdown-menu dropdown-menu-lg-end dropdown-menu-start p-0" aria-labelledby="authDropdown">
@@ -43,7 +43,7 @@ function Login() {
   return (
     <div>
       <span className="navbar-text">
-        {!AppState.account?.id ? notAuthenticated : authenticated}
+        {notAuthenticated}
       </span>
     </div>
   )
