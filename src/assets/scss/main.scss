@@ -12,7 +12,8 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--body-bg);
+  background: rgb(245,255,254);
+  background: linear-gradient(180deg, rgba(245,255,254,1) 0%, rgba(231,250,255,1) 100%);
 }
 
 main {
