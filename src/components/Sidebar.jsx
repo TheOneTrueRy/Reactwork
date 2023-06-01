@@ -14,39 +14,42 @@ function Sidebar() {
   const account = AppState.account
 
   return (
-    <div className="Sidebar">
+    <div className="Sidebar pt-5">
     {account != null &&  
       <>
-        <div className="col-12 d-flex align-items-center justify-content-center top pt-2">
-          <img src={account.picture} alt="account photo" height="150" width="150" className="rounded-circle border border-2 border-dark elevation-1" />
+        <div className="col-12 d-flex align-items-center justify-content-center top pt-5">
+          <img src={account.picture} alt="account photo" height="200" width="200" className="rounded-circle border border-2 border-dark elevation-1" />
         </div>
-        <div className="col-12 text-center">
-          <span className="fs-3">{account.name}</span>
+        <div className="col-12 pt-4 px-4">
+          <span className="fs-3">{account.class} {account.graduated ? 'Graduate' : ''}</span>
+          <div className="text-center">
+          <span className="fs-3 fw-bold">{account.name}</span>
+          </div>
         </div>
         <div className="col-12 middle pt-1">
           <div>
-            <div className="text-center d-flex flex-column">
-              <a href={account.github}>
+            <div className="text-center">
+              <a href={account.github} className="text-dark">
                 <i className="mdi mdi-github me-2 fs-2"></i>
-                <span className="on-hover fs-4">GitHub</span>
+                <span className="fs-4">GitHub</span>
               </a>
             </div>
-            <div className="text-center d-flex flex-column mt-3">
-              <a href={account.linkedin}>
+            <div className="text-center mt-3">
+              <a href={account.linkedin} className="text-dark">
                 <i className="mdi mdi-linkedin me-2 fs-2"></i>
-                <span className="on-hover fs-4">LinkedIn</span>
+                <span className="fs-4">LinkedIn</span>
               </a>
             </div>
-            <div className="text-center d-flex flex-column mt-3">
-              <a href={account.resume}>
+            <div className="text-center mt-3">
+              <a href={account.resume} className="text-dark">
                 <i className="mdi mdi-note-text-outline fs-2"></i>
-                <span className="on-hover fs-4">Resume</span>
+                <span className="fs-4">Resume</span>
               </a>
             </div>
           </div>
         </div>
-        <div className="col-12 d-flex align-items-center justify-content-center">
-          <button className="btn btn-danger" onClick={logout}>
+        <div className="col-12 d-flex align-items-center justify-content-center mt-5">
+          <button className="btn btn-dark" onClick={logout}>
             <span>LOGOUT</span>
           </button>
         </div>

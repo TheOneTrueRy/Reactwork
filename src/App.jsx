@@ -23,8 +23,15 @@ export function App() {
               <div className="col-10 g-0">
                 <Outlet />
               </div>
-              <div className="col-2 g-0">
-
+              <div className="col-2 px-3 py-4">
+                <div className="row">
+                  <div className="col-12">
+                    
+                  </div>
+                  <div className="col-12">
+                    
+                  </div>
+                </div>
               </div>
             </div>
           </div>
