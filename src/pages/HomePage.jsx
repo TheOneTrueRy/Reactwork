@@ -8,6 +8,7 @@ function HomePage() {
 
   const posts = AppState.posts
   const olderPosts = AppState.olderPosts
+  const user = AppState.account
 
   async function loadMore(){
     try {
@@ -29,8 +30,25 @@ function HomePage() {
           </div>
           <div className="col-12 py-3 px-5">
             {posts.map((post) => (
-              <div className="row" key={post.id}>
+              <div className="row my-2 shadow bg-light" key={post.id}>
+                {post.creatorId == user?.id && <div className="col-12">
 
+                </div>}
+                <div className="col-2">
+
+                </div>
+                <div className="col-10 d-flex flex-column">
+
+                </div>
+                <div className="col-12">
+
+                </div>
+                <div className="col-12 g-0">
+
+                </div>
+                <div className="col-12 text-end">
+
+                </div>
               </div>
             ))}
           </div>
