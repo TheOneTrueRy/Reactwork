@@ -4,6 +4,10 @@ import { logger } from "../utils/Logger.js"
 import { api } from "./AxiosService.js"
 
 class PostService {
+  async createPost() {
+    throw new Error("Method not implemented.")
+  }
+
   async loadMore(url) {
     const res = await api.get(url)
     const additionalPosts = res.data.posts.map(p => new Post(p))

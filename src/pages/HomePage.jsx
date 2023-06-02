@@ -19,14 +19,47 @@ function HomePage() {
     }
   }
 
+  async function createPost(){
+    try {
+      await postService.createPost()
+    }
+    catch (error){
+      Pop.error(error);
+    }
+  }
+
   return (
     <div className="home-page">
       <div className="container my-4">
         <div className="row">
           <div className="col-12 py-4 px-5">
-            <div className="row">
+            {user != null && <div className="row shadow mb-3 mt-4 bg-light py-3">
+              <div className="col-2 d-flex align-content-start justify-content-center">
+                <img src={user.picture} alt="Your Profile Picture" className="rounded-circle border border-primary post-pfp"/>
+              </div>
+                <div className="col-10">
+              <form onSubmit={createPost}>
+                  <div className="row">
+                    <div className="col-12">
+                      <textarea name="body" id="body" rows={8} className="form-control w-100 bg-light" placeholder="Whatcha thinkin?" />
+                    </div>
+                    <div className="col-6 g-0 d-flex justify-content-start">
 
-            </div>
+                    </div>
+                    <div className="col-6 g-0 d-flex justify-content-end">
+
+                    </div>
+                  </div>
+              </form>
+                </div>
+            </div>}
+            {user == null && <div className="row shadow mb-3 mt-4 bg-light">
+              <div className="col-12 text-center py-5">
+                <span className="fs-1">
+                  Log-In to post!
+                </span>
+              </div>
+            </div>}
           </div>
           <div className="col-12 py-3 px-5">
             {posts.map((post) => (
