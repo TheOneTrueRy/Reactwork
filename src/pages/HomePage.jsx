@@ -3,6 +3,7 @@ import { AppState } from "../AppState.js";
 import Pop from "../utils/Pop.js";
 import { postService } from "../services/PostService.js";
 import { observer } from "mobx-react";
+import { IoIosPaperPlane } from "react-icons/io";
 
 function HomePage() {
 
@@ -41,13 +42,13 @@ function HomePage() {
               <form onSubmit={createPost}>
                   <div className="row">
                     <div className="col-12">
-                      <textarea name="body" id="body" rows={8} className="form-control w-100 bg-light" placeholder="Whatcha thinkin?" />
+                      <textarea required name="body" id="body" rows={8} className="form-control w-100 bg-light" placeholder="Whatcha thinkin?" />
                     </div>
-                    <div className="col-6 g-0 d-flex justify-content-start">
-
+                    <div className="col-6 d-flex justify-content-start pt-2">
+                      <input type="url" name="img" id="img" className="form-control w-100 bg-light" placeholder="Img URL (Optional)"/>
                     </div>
-                    <div className="col-6 g-0 d-flex justify-content-end">
-
+                    <div className="col-6 d-flex justify-content-end pt-2">
+                      <button type="submit" className="btn btn-dark d-flex align-items-center"><IoIosPaperPlane className="me-1"/>Post</button>
                     </div>
                   </div>
               </form>
