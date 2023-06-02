@@ -27,7 +27,7 @@ function HomePage() {
 
             </div>
           </div>
-          <div className="col-12 py-4 px-5">
+          <div className="col-12 py-3 px-5">
             {posts.map((post) => (
               <div className="row" key={post.id}>
 
