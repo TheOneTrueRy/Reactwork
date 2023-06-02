@@ -30,25 +30,25 @@ function HomePage() {
           </div>
           <div className="col-12 py-3 px-5">
             {posts.map((post) => (
-              <div className="row my-2 shadow bg-light py-2" key={post.id}>
+              <div className="row my-3 shadow bg-light py-2" key={post.id}>
                 {post.creatorId == user?.id && <div className="col-12">
 
                 </div>}
-                <div className="col-2">
+                <div className="col-2 ps-0 text-center">
                   <img src={post.creator.picture} alt={`${post.creator.name}'s Profile Picture`} className="post-pfp rounded-circle border border-dark" />
                 </div>
-                <div className="col-10 d-flex flex-column">
-                  <span>{post.creator.name}</span>
-                  <span>{post.createdAt}</span>
+                <div className="col-10 d-flex flex-column justify-content-center g-0">
+                  <span className="fs-5 fw-bold">{post.creator.name}</span>
+                  <span className="">{post.createdAt}</span>
                 </div>
-                <div className="col-10 offset-1">
-                  <span>{post.body}</span>
+                <div className="col-12 py-2 px-5">
+                  <span className="fs-5">{post.body}</span>
                 </div>
                 <div className="col-12 d-flex justify-content-center g-0">
                   <img src={post.imgUrl} alt="" className="post-img"/>
                 </div>
                 <div className="col-12 text-end">
-
+                  <span>{post.likes.length} likes</span>
                 </div>
               </div>
             ))}
