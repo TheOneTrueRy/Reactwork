@@ -6,8 +6,10 @@ import { api } from "./AxiosService.js"
 class PostService {
   async getPosts() {
     const res = await api.get('/api/posts')
+    logger.log(res.data)
     AppState.posts = res.data.posts.map(p => new Post(p))
-    logger.log(AppState.posts)
+    AppState.olderPosts = res.data.older
+    AppState.newerPosts = res.data.newer
   }
 
 }
