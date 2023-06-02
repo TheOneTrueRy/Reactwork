@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar.jsx'
 import Sidebar from "./components/Sidebar.jsx"
 import Pop from "./utils/Pop.js";
 import { postService } from "./services/PostService.js";
+import {FaArrowUp} from "react-icons/fa6";
 
 
 export function App() {
@@ -35,7 +36,7 @@ export function App() {
               <div className="col-12 g-0">
                 <Navbar />
               </div>
-              <div className="col-10 g-0">
+              <div className="col-10 g-0 overflow">
                 <Outlet />
               </div>
               <div className="col-2 px-3 py-4">
@@ -49,6 +50,11 @@ export function App() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="row sticky-bottom pb-2">
+          <div className="col-12 d-flex justify-content-end">
+            <button className="btn btn-secondary"><FaArrowUp /></button>
           </div>
         </div>
       </div>
