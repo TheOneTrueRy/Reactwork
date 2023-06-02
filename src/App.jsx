@@ -4,7 +4,7 @@ import { Navbar } from './components/Navbar.jsx'
 import Sidebar from "./components/Sidebar.jsx"
 import Pop from "./utils/Pop.js";
 import { postService } from "./services/PostService.js";
-import {FaArrowUp} from "react-icons/fa6";
+import { FaArrowUp } from "react-icons/fa";
 
 
 export function App() {
@@ -16,6 +16,10 @@ export function App() {
     catch (error){
       Pop.error(error);
     }
+  }
+
+  function returnToTop(){
+    document.getElementById('nav').scrollIntoView();
   }
 
   useEffect(() => {
@@ -33,7 +37,7 @@ export function App() {
           </div>
           <div className="col-10">
             <div className="row">
-              <div className="col-12 g-0">
+              <div id="nav" className="col-12 g-0">
                 <Navbar />
               </div>
               <div className="col-10 g-0 overflow">
@@ -54,7 +58,7 @@ export function App() {
         </div>
         <div className="row sticky-bottom pb-2">
           <div className="col-12 d-flex justify-content-end">
-            <button className="btn btn-secondary"><FaArrowUp /></button>
+            <button className="btn btn-primary d-flex" onClick={returnToTop}><span className="fs-4 d-flex"><FaArrowUp /></span></button>
           </div>
         </div>
       </div>
