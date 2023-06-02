@@ -10,7 +10,7 @@ export function App() {
 
   async function getPosts(){
     try {
-      postService.getPosts()
+      await postService.getPosts()
     }
     catch (error){
       Pop.error(error);
