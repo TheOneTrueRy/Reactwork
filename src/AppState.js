@@ -4,7 +4,6 @@ import { isValidProp } from "./utils/isValidProp.js"
 
 class ObservableAppState {
 
-  newerPosts = null
   olderPosts = null
 
   user = null

@@ -17,7 +17,6 @@ class PostService {
     logger.log(res.data)
     AppState.posts = res.data.posts.map(p => new Post(p))
     AppState.olderPosts = res.data.older
-    AppState.newerPosts = res.data.newer
   }
 
 }
