@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Navbar } from './components/Navbar.jsx'
 import Sidebar from "./components/Sidebar.jsx"
+import Pop from "./utils/Pop.js";
+import { postService } from "./services/PostService.js";
 
 
 export function App() {
+
+  async function getPosts(){
+    try {
+      postService.getPosts()
+    }
+    catch (error){
+      Pop.error(error);
+    }
+  }
+
+  useEffect(() => {
+    getPosts()
+  }, [])
 
   return (
     <div className="App" id="app">

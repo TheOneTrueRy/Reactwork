@@ -7,6 +7,10 @@ class ObservableAppState {
   user = null
   /** @type {import('./models/Account.js').Account} */
   account = null
+  /** @type {import('./models/Post.js').Post[]} */
+  posts = []
+
+  filteredPosts = []
 
   constructor() {
     makeAutoObservable(this)
