@@ -22,8 +22,8 @@ function Sidebar() {
         <div className="col-12 d-flex align-items-center justify-content-center top">
           <img src={account.picture} alt="account photo" height="200" width="200" className="rounded-circle border border-2 border-dark elevation-1" />
         </div>
-        <div className="col-12 pt-4 px-4 pb-5">
-          <span className="fs-3">{account.class} {account.graduated ? 'Graduate' : ''}</span>
+        <div className="col-12 text-center pt-4 px-4 pb-5">
+          <span className="fs-5">{account.class} {account.graduated ? 'Graduate' : ''}</span>
           <div className="text-center">
           <span className="fs-3 fw-bold">{account.name}</span>
           </div>
