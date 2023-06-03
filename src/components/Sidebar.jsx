@@ -41,7 +41,7 @@ function Sidebar() {
               </a>
             </div>
         </div>
-        <div className="col-8 offset-4 d-flex align-items-center mt-5">
+        <div className="col-12 d-flex justify-content-center align-items-center mt-5">
           <button className="btn btn-dark" onClick={logout}>
             <span>LOGOUT</span>
           </button>
