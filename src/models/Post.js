@@ -8,7 +8,7 @@ export class Post {
     this.creator = data.creator
     this.likes = data.likes
     this.likeIds = data.likeIds
-    this.imgUrl = data.imgUrl || ''
+    this.imgUrl = data.imgUrl
     this.createdAt = data.createdAt
   }
 }

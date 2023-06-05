@@ -46,7 +46,7 @@ function HomePage() {
                 <img src={user.picture} alt="Your Profile Picture" className="rounded-circle border border-primary post-pfp"/>
               </div>
                 <div className="col-10">
-              <form onSubmit={createPost}>
+              <form onSubmit={createPost} key={editable.id}>
                   <div className="row">
                     <div className="col-12">
                       <textarea required name="body" id="body" value={editable.body} onChange={bindEditable} rows={8} className="form-control w-100 bg-light" placeholder="Whatcha thinkin?" />
