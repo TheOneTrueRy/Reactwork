@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { AppState } from "../AppState.js";
 import  PropTypes  from "prop-types";
-import {LuThumbsUp} from "react-icons/lu";
+import {LuThumbsUp, LuThumbsDown} from "react-icons/lu";
 import Pop from "../utils/Pop.js";
 import { postService } from "../services/PostService.js";
 
@@ -37,7 +37,7 @@ function PostCard({post}) {
       <img src={post.imgUrl} alt="" className="post-img"/>
     </div>
     <div className="col-12">
-      {user?.id && <span className="d-flex align-items-center justify-content-end fs-5"><LuThumbsUp className="me-2 selectable" onClick={likePost}/>{post.likes.length} Likes</span>}
+      {user?.id && <span className="d-flex align-items-center justify-content-end fs-5">{post.likeIds.includes(user?.id) ? <LuThumbsDown className="me-2 selectable" onClick={likePost}/> : <LuThumbsUp className="me-2 selectable" onClick={likePost}/>}{post.likes.length} Likes</span>}
       {!user?.id && <span className="d-flex align-items-center justify-content-end fs-5">{post.likes.length} Likes</span>}
     </div>
   </div>
