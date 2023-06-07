@@ -2,10 +2,22 @@ import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { AppState } from "../AppState.js";
 import  PropTypes  from "prop-types";
+import {LuThumbsUp} from "react-icons/lu";
+import Pop from "../utils/Pop.js";
+import { postService } from "../services/PostService.js";
 
 function PostCard({post}) {
-
     const user = AppState.account
+
+    async function likePost(){
+      try {
+        await postService.likePost(post.id)
+      }
+      catch (error){
+        Pop.error(error);
+      }
+    }
+
   return (
     <div className="row my-3 shadow bg-light py-2">
     {post.creatorId == user?.id && <div className="col-12">
@@ -24,8 +36,9 @@ function PostCard({post}) {
     <div className="col-12 d-flex justify-content-center g-0">
       <img src={post.imgUrl} alt="" className="post-img"/>
     </div>
-    <div className="col-12 text-end">
-      <span>{post.likes.length} likes</span>
+    <div className="col-12">
+      {user?.id && <span className="d-flex align-items-center justify-content-end fs-5"><LuThumbsUp className="me-2 selectable" onClick={likePost}/>{post.likes.length} Likes</span>}
+      {!user?.id && <span className="d-flex align-items-center justify-content-end fs-5">{post.likes.length} Likes</span>}
     </div>
   </div>
   )

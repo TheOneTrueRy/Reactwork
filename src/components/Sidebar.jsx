@@ -30,15 +30,15 @@ function Sidebar() {
         </div>
         <div className="col-12 d-flex flex-column align-items-center middle pt-1">
             <div>
-              <a href={account.github} className="text-dark">
+              {account.github !== '' && <a href={account.github} className="text-dark">
                 <span className="fs-4 d-flex align-items-center"><FaGithub className="me-1"/>GitHub</span>
-              </a>
-              <a href={account.linkedin} className="text-dark">
+              </a>}
+              {account.linkedin !== '' && <a href={account.linkedin} className="text-dark">
                 <span className="fs-4 d-flex align-items-center mt-3"><FaLinkedin className="me-1"/>LinkedIn</span>
-              </a>
-              <a href={account.resume} className="text-dark">
+              </a>}
+              {account.resume !== '' && <a href={account.resume} className="text-dark">
                 <span className="fs-4 d-flex align-items-center mt-3"><CgNotes className="me-1"/>Resume</span>
-              </a>
+              </a>}
             </div>
         </div>
         <div className="col-12 d-flex justify-content-center align-items-center mt-5">

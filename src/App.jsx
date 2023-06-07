@@ -42,7 +42,7 @@ export function App() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-2 ps-3">
-            <div className="row vh-70 bg-light elevation-2 pb-4">
+            <div className="row bg-light elevation-2 pb-4">
               <Sidebar />
             </div>
           </div>
