@@ -19,9 +19,13 @@ class PostService {
 
   async getPosts() {
     const res = await api.get('/api/posts')
-    logger.log(res.data)
     AppState.posts = res.data.posts.map(p => new Post(p))
     AppState.olderPosts = res.data.older
+  }
+
+  async likePost(postId) {
+    const res = await api.post(`/api/posts/${postId}/like`)
+    logger.log(res.data)
   }
 
 }

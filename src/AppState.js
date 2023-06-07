@@ -11,6 +11,8 @@ class ObservableAppState {
   account = null
   /** @type {import('./models/Post.js').Post[]} */
   posts = []
+  /** @type {import('./models/Ad.js').Ad[]} */
+  ads = []
 
   constructor() {
     makeAutoObservable(this)

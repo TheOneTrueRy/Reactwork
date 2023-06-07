@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar.jsx"
 import Pop from "./utils/Pop.js";
 import { postService } from "./services/PostService.js";
 import { FaArrowUp } from "react-icons/fa";
+import { adsService } from "./services/AdsService.js";
 
 
 export function App() {
@@ -18,12 +19,22 @@ export function App() {
     }
   }
 
+  async function getAds(){
+    try {
+      await adsService.getAds()
+    }
+    catch (error){
+      Pop.error(error);
+    }
+  }
+
   function returnToTop(){
     document.getElementById('nav').scrollIntoView();
   }
 
   useEffect(() => {
     getPosts()
+    getAds()
   }, [])
 
   return (
