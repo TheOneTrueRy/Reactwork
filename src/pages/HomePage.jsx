@@ -3,8 +3,6 @@ import { AppState } from "../AppState.js";
 import Pop from "../utils/Pop.js";
 import { postService } from "../services/PostService.js";
 import { observer } from "mobx-react";
-import { Post } from "../models/Post.js";
-import { BindEditable } from '../utils/FormHandler.js';
 import PostCard from "../components/PostCard.jsx";
 import PostForm from "../components/PostForm.jsx";
 
