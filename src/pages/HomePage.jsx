@@ -6,6 +6,7 @@ import { observer } from "mobx-react";
 import { IoIosPaperPlane } from "react-icons/io";
 import { Post } from "../models/Post.js";
 import { BindEditable } from '../utils/FormHandler.js';
+import PostCard from "../components/PostCard.jsx";
 
 function HomePage() {
 
@@ -14,6 +15,17 @@ function HomePage() {
   const user = AppState.account
   let editable = new Post({})
   let bindEditable = BindEditable(editable)
+  
+  async function createPost(){
+    try {
+      window.event.preventDefault()
+      await postService.createPost(editable)
+      editable = new Post({})
+    }
+    catch (error){
+      Pop.error(error.message);
+    }
+  }
 
   async function loadMore(){
     try {
@@ -21,18 +33,6 @@ function HomePage() {
     }
     catch (error){
       Pop.error(error);
-    }
-  }
-
-  async function createPost(){
-    try {
-      window.event.preventDefault()
-      const postData = editable
-      await postService.createPost(postData)
-      editable = new Post({})
-    }
-    catch (error){
-      Pop.error(error.message);
     }
   }
 
@@ -71,27 +71,7 @@ function HomePage() {
           </div>
           <div className="col-12 py-3 px-5">
             {posts.map((post) => (
-              <div className="row my-3 shadow bg-light py-2" key={post.id}>
-                {post.creatorId == user?.id && <div className="col-12">
-
-                </div>}
-                <div className="col-2 ps-0 text-center">
-                  <img src={post.creator.picture} alt={`${post.creator.name}'s Profile Picture`} className="post-pfp rounded-circle border border-dark" />
-                </div>
-                <div className="col-10 d-flex flex-column justify-content-center g-0">
-                  <span className="fs-5 fw-bold">{post.creator.name}</span>
-                  <span className="">{new Date(post.createdAt).toLocaleString()}</span>
-                </div>
-                <div className="col-12 py-2 px-5">
-                  <span className="fs-5">{post.body}</span>
-                </div>
-                <div className="col-12 d-flex justify-content-center g-0">
-                  <img src={post.imgUrl} alt="" className="post-img"/>
-                </div>
-                <div className="col-12 text-end">
-                  <span>{post.likes.length} likes</span>
-                </div>
-              </div>
+              <PostCard post={post} key={post.id}/>
             ))}
           </div>
           <div className="col-12 py-4 px-5 d-flex justify-content-center align-items-center">
