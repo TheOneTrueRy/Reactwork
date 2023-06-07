@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function componentName() {
+export default function AdCard() {
 
   return (
 
-    <div className="componentName">
+    <div className="AdCard">
 
     </div>
   )

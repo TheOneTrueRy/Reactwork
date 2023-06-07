@@ -1,14 +1,14 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 
-function componentName() {
+function ProfileDetails() {
 
   return (
 
-    <div className="componentName">
+    <div className="ProfileDetails">
 
     </div>
   )
 
 }
-export default observer(componentName)
+export default observer(ProfileDetails)
