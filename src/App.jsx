@@ -6,6 +6,8 @@ import Pop from "./utils/Pop.js";
 import { postService } from "./services/PostService.js";
 import { FaArrowUp } from "react-icons/fa";
 import { adsService } from "./services/AdsService.js";
+import AdCard from "./components/AdCard.jsx";
+import { AppState } from "./AppState.js";
 
 
 export function App() {
@@ -37,6 +39,8 @@ export function App() {
     getAds()
   }, [])
 
+  const ads = AppState.ads
+
   return (
     <div className="App" id="app">
       <div className="container-fluid">
@@ -54,13 +58,10 @@ export function App() {
               <div className="col-10 g-0 overflow">
                 <Outlet />
               </div>
-              <div className="col-2 px-3 py-4">
+              <div className="col-2">
                 <div className="row">
                   <div className="col-12">
-                    
-                  </div>
-                  <div className="col-12">
-                    
+                    <AdCard/>
                   </div>
                 </div>
               </div>
