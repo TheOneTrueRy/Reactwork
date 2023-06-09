@@ -17,10 +17,10 @@ function Sidebar() {
   const account = AppState.account
 
   return (
-    <div className="Sidebar pt-5">
+    <>
     {account != null &&  
       <>
-        <div className="col-12 d-flex align-items-center justify-content-center top">
+        <div className="col-12 d-flex align-items-center justify-content-center top pt-5">
           <img src={account.picture} alt="account photo" height="200" width="200" className="rounded-circle border border-2 border-dark elevation-1" />
         </div>
         <div className="col-12 text-center pt-4 px-4">
@@ -59,7 +59,7 @@ function Sidebar() {
           <Login />
         </div>
       </>}
-    </div>
+    </>
   )
 
 }
