@@ -19,7 +19,7 @@ function PostCard({post}) {
     }
 
   return (
-    <div className="row my-3 shadow bg-light py-2">
+  <div className="row my-3 shadow bg-light py-2">
     {post.creatorId == user?.id && <div className="col-12">
 
     </div>}

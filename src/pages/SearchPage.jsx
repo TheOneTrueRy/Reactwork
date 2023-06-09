@@ -1,14 +1,14 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 
-function componentName() {
+function SearchPage() {
 
   return (
 
-    <div className="componentName">
+    <div className="SearchPage">
 
     </div>
   )
 
 }
-export default observer(componentName)
+export default observer(SearchPage)

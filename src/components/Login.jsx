@@ -41,11 +41,11 @@ function Login() {
   )
 
   return (
-    <div>
+    <>
       <span className="navbar-text">
         {!AppState.account?.id ? notAuthenticated : authenticated}
       </span>
-    </div>
+    </>
   )
 }
 
