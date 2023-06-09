@@ -6,6 +6,7 @@ import { Post } from "../models/Post.js";
 import { BindEditable } from "../utils/FormHandler.js";
 import { postService } from "../services/PostService.js";
 import Pop from "../utils/Pop.js";
+import { Link } from "react-router-dom";
 
 
 function PostForm() {
@@ -28,7 +29,9 @@ function PostForm() {
     <div className="PostForm">
                   {user != null && <div className="row shadow mb-3 mt-4 bg-light py-3">
               <div className="col-2 d-flex align-content-start justify-content-center">
-                <img src={user.picture} alt="Your Profile Picture" className="rounded-circle border border-primary post-pfp"/>
+                <Link to={`profiles/${user.id}`}>
+                <img src={user.picture} alt="Your Profile Picture" className="rounded-circle border border-primary post-pfp hover"/>
+                </Link>
               </div>
                 <div className="col-10">
               <form onSubmit={createPost} key={editable.id}>

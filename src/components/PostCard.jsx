@@ -5,6 +5,7 @@ import  PropTypes  from "prop-types";
 import {LuThumbsUp, LuThumbsDown} from "react-icons/lu";
 import Pop from "../utils/Pop.js";
 import { postService } from "../services/PostService.js";
+import { Link } from "react-router-dom";
 
 function PostCard({post}) {
     const user = AppState.account
@@ -24,11 +25,15 @@ function PostCard({post}) {
 
     </div>}
     <div className="col-2 ps-0 text-center">
-      <img src={post.creator.picture} alt={`${post.creator.name}'s Profile Picture`} className="post-pfp rounded-circle border border-dark" />
+      <Link to={`profiles/${post.creator.id}`}>
+      <img src={post.creator.picture} alt={`${post.creator.name}'s Profile Picture`} className="post-pfp rounded-circle border border-dark hover" />
+      </Link>
     </div>
     <div className="col-10 d-flex flex-column justify-content-center g-0">
-      <span className="fs-5 fw-bold">{post.creator.name}</span>
-      <span className="">{new Date(post.createdAt).toLocaleString()}</span>
+      
+      <span className="fs-5 fw-bold"><Link to={`profiles/${post.creator.id}`} className="text-dark">{post.creator.name}</Link></span>
+      
+      <span>{new Date(post.createdAt).toLocaleString()}</span>
     </div>
     <div className="col-12 py-2 px-5">
       <span className="fs-5">{post.body}</span>

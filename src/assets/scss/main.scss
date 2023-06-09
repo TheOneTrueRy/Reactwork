@@ -71,3 +71,11 @@ form:invalid button[type="submit"] {
 textarea{
   resize: none;
 }
+
+.hover{
+  transition: 0.4s;
+}
+
+.hover:hover{
+  transform: scale(1.1);
+}
