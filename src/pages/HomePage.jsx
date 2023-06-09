@@ -21,7 +21,7 @@ function HomePage() {
   }
 
   return (
-    <div className="home-page">
+    <>
       <div className="container my-4">
         <div className="row">
           <div className="col-12 pt-4 px-5">
@@ -38,7 +38,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
