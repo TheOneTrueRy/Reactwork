@@ -5,6 +5,7 @@ import { AuthService } from "../services/AuthService.js";
 import { observer } from "mobx-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   
@@ -29,9 +30,9 @@ function Sidebar() {
           </div>
         </div>
         <div className="col-12 d-flex align-items-center justify-content-center pt-3 pb-5">
-          <a href={'Profile'}>
-          <button className="btn btn-dark">My Profile</button>
-          </a>
+          <Link to={`profiles/${account.id}`} title="Visit Your Profile Page">
+          <button className="btn btn-dark" type="button">My Profile</button>
+          </Link>
         </div>
         <div className="col-12 d-flex flex-column align-items-center middle pt-1">
             <div>

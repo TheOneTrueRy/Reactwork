@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-navbar px-3">
-      <Link className="navbar-brand d-flex text-light" to={''}>
+      <Link className="navbar-brand d-flex text-light" to={''} title="Return to Homepage">
         <div className="d-flex flex-column align-items-center justify-content-center">
           <img alt="logo" src={`https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png`} height="45" />
         </div>
