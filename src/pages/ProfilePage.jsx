@@ -6,6 +6,7 @@ import ProfileDetails from "../components/ProfileDetails.jsx";
 import Pop from "../utils/Pop.js";
 import { profileService } from "../services/ProfileService.js";
 
+
 function ProfilePage() {
   const {profileId} = useParams()
   const profile = AppState.profile
@@ -27,9 +28,13 @@ function ProfilePage() {
   return (
 
     <>
-    <div className="col-12 px-5">
-      <ProfileDetails profile={profile}/>
-    </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 px-5">
+            <ProfileDetails profile={profile}/>
+          </div>
+        </div>
+      </div>
     </>
   )
 

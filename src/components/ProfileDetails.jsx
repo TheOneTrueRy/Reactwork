@@ -2,6 +2,8 @@ import  PropTypes  from "prop-types";
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { AppState } from "../AppState.js";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { CgNotes } from "react-icons/cg";
 
 function ProfileDetails({profile}) {
   const account = AppState.account
@@ -16,8 +18,16 @@ function ProfileDetails({profile}) {
             <div className="col-2">
               <img src={profile.picture} alt={`${profile.name}'s Profile Picture`} className="pfp rounded-circle border border-primary"/>
             </div>
-            <div className="col-9 d-flex justify-content-end">
-
+            <div className="col-10 d-flex justify-content-end align-items-end">
+              {profile.github !== '' && <a href={profile.github} target="_blank" rel="noreferrer">
+                <FaGithub className="me-3 fs-2 text-dark"/>
+              </a>}
+              {profile.linkedin !== '' && <a href={profile.linkedin} target="_blank" rel="noreferrer">
+                <FaLinkedin className="me-3 fs-2 text-dark"/>
+              </a>}
+              {profile.resume !== '' && <a href={profile.resume} target="_blank" rel="noreferrer">
+                <CgNotes className="me-3 fs-2 text-dark"/>
+              </a>}
             </div>
             <div className="col-12 d-flex flex-column pt-1 ps-5">
               <span className="fs-5">{profile.class}</span>
