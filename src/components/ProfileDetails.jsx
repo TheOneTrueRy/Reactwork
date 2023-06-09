@@ -1,32 +1,32 @@
-import  PropTypes  from "prop-types";
+import PropTypes from "prop-types";
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { AppState } from "../AppState.js";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
 
-function ProfileDetails({profile}) {
+function ProfileDetails({ profile }) {
   const account = AppState.account
   return (
     <>
-      {profile ? <div className="row shadow mt-2 bg-light">
+      {profile ? <div className="row shadow mt-2 mb-2 bg-light">
         <div className="col-12 g-0">
-          <img src={profile.coverImg} alt={`${profile.name}'s Cover Image`} className="w-100 vh-20"/>
+          <img src={profile.coverImg} alt={`${profile.name}'s Cover Image`} className="w-100 vh-20" />
         </div>
         <div className="col-12 move-up">
           <div className="row">
             <div className="col-2">
-              <img src={profile.picture} alt={`${profile.name}'s Profile Picture`} className="pfp rounded-circle border border-primary"/>
+              <img src={profile.picture} alt={`${profile.name}'s Profile Picture`} className="pfp rounded-circle border border-primary" />
             </div>
             <div className="col-10 d-flex justify-content-end align-items-end">
               {profile.github !== '' && <a href={profile.github} target="_blank" rel="noreferrer">
-                <FaGithub className="me-3 fs-2 text-dark"/>
+                <FaGithub className="me-3 fs-2 text-dark" />
               </a>}
               {profile.linkedin !== '' && <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                <FaLinkedin className="me-3 fs-2 text-dark"/>
+                <FaLinkedin className="me-3 fs-2 text-dark" />
               </a>}
               {profile.resume !== '' && <a href={profile.resume} target="_blank" rel="noreferrer">
-                <CgNotes className="me-3 fs-2 text-dark"/>
+                <CgNotes className="me-3 fs-2 text-dark" />
               </a>}
             </div>
             <div className="col-12 d-flex flex-column pt-1 ps-5">
