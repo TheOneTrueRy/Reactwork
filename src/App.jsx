@@ -7,7 +7,6 @@ import { postService } from "./services/PostService.js";
 import { FaArrowUp } from "react-icons/fa";
 import { adsService } from "./services/AdsService.js";
 import AdCard from "./components/AdCard.jsx";
-import { AppState } from "./AppState.js";
 
 
 export function App() {
@@ -39,8 +38,6 @@ export function App() {
     getAds()
   }, [])
 
-  const ads = AppState.ads
-
   return (
     <div className="App" id="app">
       <div className="container-fluid">
@@ -55,7 +52,7 @@ export function App() {
               <div id="nav" className="col-12 g-0">
                 <Navbar />
               </div>
-              <div className="col-10 g-0 overflow">
+              <div className="col-10 g-0">
                 <Outlet />
               </div>
               <div className="col-2">

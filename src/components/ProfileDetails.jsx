@@ -1,4 +1,4 @@
-import { PropTypes } from "mobx-react";
+import  PropTypes  from "prop-types";
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { AppState } from "../AppState.js";
@@ -7,37 +7,37 @@ function ProfileDetails({profile}) {
   const account = AppState.account
   return (
     <>
-      <div className="row shadow mt-2 py-2 bg-light">
-        <div className="col-12">
+      {profile ? <div className="row shadow mt-2 bg-light">
+        <div className="col-12 g-0">
           <img src={profile.coverImg} alt={`${profile.name}'s Cover Image`} className="w-100 vh-20"/>
         </div>
         <div className="col-12 move-up">
           <div className="row">
-            <div className="col-3 text-center">
-              <img src={profile.picture} alt={`${profile.name}'s Profile Picture`} className="pfp rounded-circle border-primary"/>
+            <div className="col-2">
+              <img src={profile.picture} alt={`${profile.name}'s Profile Picture`} className="pfp rounded-circle border border-primary"/>
             </div>
             <div className="col-9 d-flex justify-content-end">
 
             </div>
-            <div className="col-12 d-flex flex-column">
+            <div className="col-12 d-flex flex-column pt-1 ps-5">
               <span className="fs-5">{profile.class}</span>
               <span className="fs-4 fw-bold">{profile.name}</span>
             </div>
-            <div className="col-12">
+            <div className="col-12 ps-5 pt-3">
               <span><i>{profile.bio}</i></span>
-            </div>
-            <div className="col-12 d-flex justify-content-end">
-              {profile.id == account.id && <button className="btn btn-outline-primary" type="button" title="Edit Your Profile">Edit</button>}
             </div>
           </div>
         </div>
-      </div>
+        <div className="col-12 d-flex justify-content-end pb-2">
+          {profile.id == account.id && <button className="btn btn-outline-primary" type="button" title="Edit Your Profile">Edit</button>}
+        </div>
+      </div> : <div className="ms-3"><span className="fs-1">Loading...</span></div>}
     </>
   )
 }
 
 ProfileDetails.propTypes = {
-  profile: PropTypes.objectOrObservableObject.isRequired
+  profile: PropTypes.object.isRequired
 }
 
 export default observer(ProfileDetails)
