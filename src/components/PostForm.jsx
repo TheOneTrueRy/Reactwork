@@ -37,10 +37,10 @@ function PostForm() {
           <form onSubmit={createPost} key={editable.id}>
             <div className="row">
               <div className="col-12">
-                <textarea required name="body" id="body" value={editable.body} onChange={bindEditable} rows={5} className="form-control w-100 bg-light" placeholder="Whatcha thinkin?" />
+                <textarea required name="body" id="body" defaultValue={editable.body} onChange={bindEditable} rows={5} className="form-control w-100 bg-light" placeholder="Whatcha thinkin?" />
               </div>
               <div className="col-6 d-flex justify-content-start pt-2">
-                <input type="url" name="imgUrl" id="imgUrl" value={editable.imgUrl} onChange={bindEditable} className="form-control w-100 bg-light" placeholder="Img URL (Optional)" />
+                <input type="url" name="imgUrl" id="imgUrl" defaultValue={editable.imgUrl} onChange={bindEditable} className="form-control w-100 bg-light" placeholder="Img URL (Optional)" />
               </div>
               <div className="col-6 d-flex justify-content-end pt-2">
                 <button type="submit" className="btn btn-dark d-flex align-items-center"><IoIosPaperPlane className="me-1" />Post</button>

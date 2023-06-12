@@ -5,19 +5,22 @@ import { BindEditable } from "../utils/FormHandler.js";
 import Pop from "../utils/Pop.js";
 import { postService } from "../services/PostService.js";
 import { profileService } from "../services/ProfileService.js";
+import { logger } from "../utils/Logger.js";
 
 export function Navbar() {
-  let editable = {}
+  let editable = { query: '' }
   let bindEditable = BindEditable(editable)
 
   async function search() {
     try {
-      await postService.searchPosts(editable.query)
-      await profileService.searchProfiles(editable.query)
-      editable = {}
+      logger.log(editable.query, 'Query')
+      window.event.preventDefault
+      await postService.searchPosts(editable)
+      await profileService.searchProfiles(editable)
+      editable = { query: '' }
     }
     catch (error) {
-      Pop.error(error);
+      Pop.error(error.message);
     }
   }
 
@@ -44,10 +47,10 @@ export function Navbar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <form onSubmit={search}>
+      <form onSubmit={search} key={editable.id}>
         <div className="input-group">
-          <input type="text" className="form-control bg-light" placeholder="Search..." value={editable.query} onChange={bindEditable} />
-          <span className="input-group-text bg-light"><RxMagnifyingGlass className="fs-5" /></span>
+          <input type="text" className="form-control bg-light" placeholder="Search..." defaultValue={editable.query} onChange={bindEditable} id="query" name="query" />
+          <span className="input-group-text bg-light selectable" onClick={search}><RxMagnifyingGlass className="fs-5" /></span>
         </div>
       </form>
       {/* <div className="collapse navbar-collapse" id="navbarText">
