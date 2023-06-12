@@ -9,7 +9,7 @@ import { profileService } from "../services/ProfileService.js";
 export function Navbar() {
   let editable = { query: '' }
   let bindEditable = BindEditable(editable)
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   async function search() {
     try {
@@ -17,7 +17,7 @@ export function Navbar() {
       await postService.searchPosts(editable)
       await profileService.searchProfiles(editable)
       editable = { query: '' }
-      // navigate('/search')
+      navigate('/search')
     }
     catch (error) {
       Pop.error(error.message);
