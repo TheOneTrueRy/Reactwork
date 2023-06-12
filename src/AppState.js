@@ -11,8 +11,11 @@ class ObservableAppState {
   account = null
   /** @type {import('./models/Profile.js').Profile} */
   profile = null
+  /** @type {import('./models/Profile.js').Profile[]} */
+  searchedProfiles = []
   /** @type {import('./models/Post.js').Post[]} */
   posts = []
+  searchedPosts = []
   /** @type {import('./models/Ad.js').Ad[]} */
   ads = []
 

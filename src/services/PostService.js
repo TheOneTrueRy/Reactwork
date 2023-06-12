@@ -3,6 +3,9 @@ import { Post } from "../models/Post.js"
 import { api } from "./AxiosService.js"
 
 class PostService {
+  searchPosts(query) {
+    throw new Error("Method not implemented.")
+  }
   async createPost(postData) {
     const res = await api.post('/api/posts', postData)
     AppState.posts.unshift(new Post(res.data))
