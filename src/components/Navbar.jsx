@@ -13,7 +13,7 @@ export function Navbar() {
 
   async function search() {
     try {
-      window.event.preventDefault
+      window.event.preventDefault()
       await postService.searchPosts(editable)
       await profileService.searchProfiles(editable)
       editable = { query: '' }
