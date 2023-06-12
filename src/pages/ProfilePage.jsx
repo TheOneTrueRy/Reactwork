@@ -10,16 +10,16 @@ import PostCard from "../components/PostCard.jsx";
 
 
 function ProfilePage() {
-  const {profileId} = useParams()
+  const { profileId } = useParams()
   const profile = AppState.profile
   const profilePosts = AppState.posts.filter(post => post.creatorId == profileId)
   const account = AppState.account
 
-  async function getProfile(){
+  async function getProfile() {
     try {
       profileService.getProfile(profileId)
     }
-    catch (error){
+    catch (error) {
       Pop.error(error);
     }
   }
@@ -34,15 +34,15 @@ function ProfilePage() {
       <div className="container">
         <div className="row px-5">
           <div className="col-12">
-            <ProfileDetails profile={profile}/>
+            <ProfileDetails profile={profile} />
           </div>
-          {account.id == profile.id && 
-          <div className="col-12">
-            <PostForm/>
-          </div>}
+          {account?.id == profile?.id &&
+            <div className="col-12">
+              <PostForm />
+            </div>}
           <div className="col-12 py-3">
             {profilePosts.map((post) => (
-              <PostCard post={post} key={post.id}/>
+              <PostCard post={post} key={post.id} />
             ))}
           </div>
         </div>
