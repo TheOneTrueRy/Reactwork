@@ -1,17 +1,24 @@
 import PropTypes from "prop-types";
 import { observer } from 'mobx-react-lite';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AppState } from "../AppState.js";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
 
 function ProfileDetails({ profile }) {
   const account = AppState.account
+
+  useEffect(() => {
+    return () => {
+      AppState.profile = null
+    };
+  }, [])
+
   return (
     <>
       {profile ? <div className="row shadow mt-2 mb-2 bg-light">
         <div className="col-12 g-0">
-          <img src={profile.coverImg} alt={`${profile.name}'s Cover Image`} className="w-100 vh-20" />
+          <img src={profile.coverImg} alt={`${profile.name}'s Cover Image`} className="w-100 vh-25" />
         </div>
         <div className="col-12 move-up">
           <div className="row">
