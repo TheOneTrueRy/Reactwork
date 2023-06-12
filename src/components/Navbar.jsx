@@ -1,23 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RxMagnifyingGlass } from "react-icons/rx";
 import { BindEditable } from "../utils/FormHandler.js";
 import Pop from "../utils/Pop.js";
 import { postService } from "../services/PostService.js";
 import { profileService } from "../services/ProfileService.js";
-import { logger } from "../utils/Logger.js";
 
 export function Navbar() {
   let editable = { query: '' }
   let bindEditable = BindEditable(editable)
+  // const navigate = useNavigate();
 
   async function search() {
     try {
-      logger.log(editable.query, 'Query')
       window.event.preventDefault
       await postService.searchPosts(editable)
       await profileService.searchProfiles(editable)
       editable = { query: '' }
+      // navigate('/search')
     }
     catch (error) {
       Pop.error(error.message);
