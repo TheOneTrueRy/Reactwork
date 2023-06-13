@@ -24,7 +24,7 @@ function HomePage() {
     <>
       <div className="container my-4">
         <div className="row">
-          <div className="col-12 px-5">
+          <div className="col-10 offset-1 px-5">
             <PostForm />
           </div>
           <div className="col-12 py-3 px-5">

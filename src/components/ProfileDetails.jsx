@@ -91,9 +91,9 @@ function ProfileDetails({ profile }) {
             <label className="mt-2" htmlFor="class">Class</label>
             <input type="text" name="class" id="class" defaultValue={editable.class} onChange={bindEditable} className="form-control bg-light" placeholder="Class of..." maxLength={40} />
             <label className="mt-2" htmlFor="graduated">Graduated?</label>
-            {/* FIXME Box is not reactively checked if opening offcanvas/form while graduated is true. */}
-            <input type="checkbox" name="graduated" id="graduated" defaultValue={editable.graduated} onChange={bindEditable} className="ms-2" />
-            <button className="btn btn-outline-primary ms-5" type="submit">Finish Editing</button>
+            {/* FIXME Graduated does not change when checking or unchecking box, always null/false. */}
+            <input defaultChecked={editable.graduated} type="checkbox" name="graduated" id="graduated" defaultValue={editable.graduated} onChange={bindEditable} className="ms-2" />
+            <button className="btn btn-outline-primary ms-5" type="submit" data-bs-dismiss={"offcanvas"} data-bs-target={"editOffcanvas"}>Finish Editing</button>
           </form>
         </div>
       </div>
