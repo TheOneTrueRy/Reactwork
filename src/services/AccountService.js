@@ -5,6 +5,9 @@ import { api } from './AxiosService'
 
 class AccountService {
   async editAccount(editable) {
+    if (editable.graduted == null) {
+      editable.graduated = false
+    }
     const res = await api.put('account', editable)
     AppState.account = new Account(res.data)
     logger.log(AppState.account)

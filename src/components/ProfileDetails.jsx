@@ -54,7 +54,7 @@ function ProfileDetails({ profile }) {
               </a>}
             </div>
             <div className="col-12 d-flex flex-column pt-1 ps-5">
-              <span className="fs-5">{profile.class}</span>
+              <span className="fs-5">{profile.class} {profile.graduated == true ? 'Graduate' : ''}</span>
               <span className="fs-4 fw-bold">{profile.name}</span>
             </div>
             <div className="col-12 ps-5 pt-3">
@@ -63,7 +63,7 @@ function ProfileDetails({ profile }) {
           </div>
         </div>
         <div className="col-12 d-flex justify-content-end pb-2">
-          {profile.id == account.id && <button className="btn btn-outline-primary" type="button" title="Edit Your Profile" data-bs-toggle={"offcanvas"} data-bs-target={"#editOffcanvas"}>Edit</button>}
+          {profile.id == account?.id && <button className="btn btn-outline-primary" type="button" title="Edit Your Profile" data-bs-toggle={"offcanvas"} data-bs-target={"#editOffcanvas"}>Edit</button>}
         </div>
       </div> : <div className="ms-3"><span className="fs-1">Loading...</span></div>}
       {/* BOOTSTRAP OFFCANVAS */}
@@ -73,7 +73,27 @@ function ProfileDetails({ profile }) {
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div className="offcanvas-body">
-          ...
+          <form onSubmit={editAccount}>
+            <label className="mt-2" htmlFor="name">Name</label>
+            <input required type="text" name="name" id="name" defaultValue={editable.name} onChange={bindEditable} className="form-control bg-light" placeholder="Name..." maxLength={50} />
+            <label className="mt-2" htmlFor="picture">Profile Picture</label>
+            <input required type="url" name="picture" id="picture" defaultValue={editable.picture} onChange={bindEditable} className="form-control bg-light" placeholder="Profile Picture URL..." maxLength={300} />
+            <label className="mt-2" htmlFor="bio">Bio</label>
+            <input type="text" name="bio" id="bio" defaultValue={editable.bio} onChange={bindEditable} className="form-control bg-light" placeholder="Bio..." maxLength={1000} />
+            <label className="mt-2" htmlFor="coverImg">Cover Image</label>
+            <input type="url" name="coverImg" id="coverImg" defaultValue={editable.coverImg} onChange={bindEditable} className="form-control bg-light" placeholder="Cover Image URL..." maxLength={300} />
+            <label className="mt-2" htmlFor="github">GitHub URL</label>
+            <input type="url" name="github" id="github" defaultValue={editable.github} onChange={bindEditable} className="form-control bg-light" placeholder="GitHub URL..." maxLength={300} />
+            <label className="mt-2" htmlFor="linkedin">LinkedIn URL</label>
+            <input type="url" name="linkedin" id="linkedin" defaultValue={editable.linkedin} onChange={bindEditable} className="form-control bg-light" placeholder="LinkedIn URL..." maxLength={300} />
+            <label className="mt-2" htmlFor="resume">Resume URL</label>
+            <input type="url" name="resume" id="resume" defaultValue={editable.resume} onChange={bindEditable} className="form-control bg-light" placeholder="Resume URL..." maxLength={300} />
+            <label className="mt-2" htmlFor="class">Class</label>
+            <input type="text" name="class" id="class" defaultValue={editable.class} onChange={bindEditable} className="form-control bg-light" placeholder="Class of..." maxLength={40} />
+            <label className="mt-2" htmlFor="graduated">Graduated?</label>
+            <input type="checkbox" name="graduated" id="graduated" defaultValue={editable.graduated} onChange={bindEditable} className="ms-2" />
+            <button className="btn btn-outline-primary ms-5" type="submit">Finish Editing</button>
+          </form>
         </div>
       </div>
     </>
