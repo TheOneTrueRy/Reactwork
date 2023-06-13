@@ -1,11 +1,13 @@
 import { AppState } from "../AppState.js"
 import { Post } from "../models/Post.js"
+import { logger } from "../utils/Logger.js"
 import { api } from "./AxiosService.js"
 
 class PostService {
   async searchPosts(query) {
     const res = await api.get('api/posts', { params: query })
     AppState.searchedPosts = res.data.posts.map(p => new Post(p))
+    logger.log(AppState.searchedPosts, '[Searched Posts]')
   }
 
   async createPost(postData) {

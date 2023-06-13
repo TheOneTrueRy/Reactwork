@@ -1,7 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
+import PropTypes from "prop-types";
 
-function ProfileCard() {
+function ProfileCard({ profile }) {
 
   return (
 
@@ -11,4 +12,9 @@ function ProfileCard() {
   )
 
 }
+
+ProfileCard.propTypes = {
+  profile: PropTypes.object.isRequired
+}
+
 export default observer(ProfileCard)
