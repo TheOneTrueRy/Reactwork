@@ -34,6 +34,7 @@ function PostForm() {
           </Link>
         </div>
         <div className="col-10">
+          {/* FIXME Form Inputs do not reactively clear when editable is set back to empty object on form submission. */}
           <form onSubmit={createPost} key={editable.id}>
             <div className="row">
               <div className="col-12">

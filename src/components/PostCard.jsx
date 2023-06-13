@@ -31,7 +31,7 @@ function PostCard({ post }) {
       </div>
       <div className="col-10 d-flex flex-column justify-content-center g-0">
 
-        <span className="fs-5 fw-bold"><Link to={`profiles/${post.creator.id}`} className="text-dark">{post.creator.name}</Link></span>
+        <span className="fs-5 fw-bold"><Link to={`profiles/${post.creator.id}`} className="text-dark">{post.creator.name} {post.creator.graduated == true ? '- Graduate' : ''}</Link></span>
 
         <span>{new Date(post.createdAt).toLocaleString()}</span>
       </div>

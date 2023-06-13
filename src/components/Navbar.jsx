@@ -47,6 +47,7 @@ export function Navbar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
+      {/* FIXME Searchbar does not clear after search is made. */}
       <form onSubmit={search} key={editable.id}>
         <div className="input-group">
           <input type="text" className="form-control bg-light" placeholder="Search..." defaultValue={editable.query} onChange={bindEditable} id="query" name="query" />

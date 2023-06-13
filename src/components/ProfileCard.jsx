@@ -16,7 +16,7 @@ function ProfileCard({ profile }) {
           </Link>
         </div>
         <div className="col-10 d-flex flex-column justify-content-center">
-          <span className="fs-2">{profile.class}</span>
+          <span className="fs-2">{profile.class} {profile.graduated == true ? 'Graduate' : ''}</span>
           <Link to={`profiles/${profile.id}`}>
             <span className="fs-1 fw-bold text-dark">{profile.name}</span>
           </Link>
