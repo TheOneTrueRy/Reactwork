@@ -33,13 +33,13 @@ function PostCard({ post }) {
   }
 
   return (
-    <div className="row my-3 shadow bg-light py-2">
+    <div className="row my-3 shadow bg-light pb-2">
       {post.creatorId == user?.id && <div className="col-12 d-flex justify-content-end">
         <div className="dropdown">
-          <span className="text-dark fs-4 pointer dropdown-toggle" data-bs-toggle={"dropdown"}>...</span>
+          <span className="text-dark fs-4 pointer" data-bs-toggle={"dropdown"}>...</span>
 
-          <ul className="dropdown-menu">
-            <li className="dropdown-item selectable"><span className="text-danger" onClick={deletePost}>Delete Your Post</span></li>
+          <ul className="dropdown-menu py-0">
+            <li className="dropdown-item selectable py-2 rounded"><span className="text-danger" onClick={deletePost}>Delete Your Post</span></li>
           </ul>
         </div>
       </div>}
