@@ -19,6 +19,19 @@ function PostCard({ post }) {
     }
   }
 
+  async function deletePost() {
+    try {
+      if (await Pop.confirm('Are you sure you want to delete your post?')) {
+        await postService.deletePost(post.id)
+      } else {
+        return
+      }
+    }
+    catch (error) {
+      Pop.error(error.message);
+    }
+  }
+
   return (
     <div className="row my-3 shadow bg-light py-2">
       {post.creatorId == user?.id && <div className="col-12">

@@ -4,6 +4,14 @@ import { logger } from "../utils/Logger.js"
 import { api } from "./AxiosService.js"
 
 class PostService {
+  async deletePost(postId) {
+    const res = await api.delete('api/posts/' + postId)
+    let postIndex = AppState.posts.findIndex(p => p.id == postId)
+    if (postIndex != -1) {
+      AppState.posts.splice(postIndex, 1)
+    }
+  }
+
   async searchPosts(query) {
     const res = await api.get('api/posts', { params: query })
     AppState.searchedPosts = res.data.posts.map(p => new Post(p))
