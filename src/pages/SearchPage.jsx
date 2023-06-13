@@ -6,7 +6,9 @@ function SearchPage() {
   return (
 
     <>
+      <div className="container my-4">
 
+      </div>
     </>
   )
 

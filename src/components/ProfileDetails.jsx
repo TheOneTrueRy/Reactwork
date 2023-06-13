@@ -16,7 +16,7 @@ function ProfileDetails({ profile }) {
 
   return (
     <>
-      {profile ? <div className="row shadow mt-2 mb-2 bg-light">
+      {profile ? <div className="row shadow mb-2 bg-light">
         <div className="col-12 g-0">
           <img src={profile.coverImg} alt={`${profile.name}'s Cover Image`} className="w-100 vh-25" />
         </div>

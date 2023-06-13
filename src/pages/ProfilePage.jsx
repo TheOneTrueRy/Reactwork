@@ -31,16 +31,16 @@ function ProfilePage() {
   return (
 
     <>
-      <div className="container">
-        <div className="row px-5">
-          <div className="col-12">
+      <div className="container my-4">
+        <div className="row">
+          <div className="col-12 px-5">
             <ProfileDetails profile={profile} />
           </div>
           {account?.id == profile?.id &&
-            <div className="col-12">
+            <div className="col-12 px-5">
               <PostForm />
             </div>}
-          <div className="col-12 py-3">
+          <div className="col-12 py-3 px-5">
             {profilePosts.map((post) => (
               <PostCard post={post} key={post.id} />
             ))}
