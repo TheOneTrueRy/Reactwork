@@ -4,6 +4,12 @@ import { logger } from '../utils/Logger.js'
 import { api } from './AxiosService'
 
 class AccountService {
+  async editAccount(editable) {
+    const res = await api.put('account', editable)
+    AppState.account = new Account(res.data)
+    logger.log(AppState.account)
+  }
+
   async getAccount() {
     try {
       if (AppState.account) {
