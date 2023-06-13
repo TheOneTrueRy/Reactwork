@@ -34,8 +34,14 @@ function PostCard({ post }) {
 
   return (
     <div className="row my-3 shadow bg-light py-2">
-      {post.creatorId == user?.id && <div className="col-12">
+      {post.creatorId == user?.id && <div className="col-12 d-flex justify-content-end">
+        <div className="dropdown">
+          <span className="text-dark fs-4 pointer dropdown-toggle" data-bs-toggle={"dropdown"}>...</span>
 
+          <ul className="dropdown-menu">
+            <li className="dropdown-item selectable"><span className="text-danger" onClick={deletePost}>Delete Your Post</span></li>
+          </ul>
+        </div>
       </div>}
       <div className="col-2 ps-0 text-center">
         <Link to={`profiles/${post.creator.id}`}>

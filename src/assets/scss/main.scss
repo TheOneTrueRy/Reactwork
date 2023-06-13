@@ -92,3 +92,11 @@ textarea{
   height: 15vh;
   width: 15vh;
 }
+
+.pointer{
+  cursor: pointer;
+}
+
+.no-arrow{
+  $caret-width: 0
+}
