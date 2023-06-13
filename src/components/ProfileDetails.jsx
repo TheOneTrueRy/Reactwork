@@ -43,13 +43,13 @@ function ProfileDetails({ profile }) {
               <img src={profile.picture} alt={`${profile.name}'s Profile Picture`} className="pfp rounded-circle border border-primary" />
             </div>
             <div className="col-10 d-flex justify-content-end align-items-end">
-              {profile.github !== '' && <a href={profile.github} target="_blank" rel="noreferrer">
+              {profile.github !== '' && <a href={profile.github} target="_blank" rel="noreferrer" title={`Visit ${profile.name}'s GitHub page.`}>
                 <FaGithub className="me-3 fs-2 text-dark" />
               </a>}
-              {profile.linkedin !== '' && <a href={profile.linkedin} target="_blank" rel="noreferrer">
+              {profile.linkedin !== '' && <a href={profile.linkedin} target="_blank" rel="noreferrer" title={`Visit ${profile.name}'s LinkedIn page.`}>
                 <FaLinkedin className="me-3 fs-2 text-dark" />
               </a>}
-              {profile.resume !== '' && <a href={profile.resume} target="_blank" rel="noreferrer">
+              {profile.resume !== '' && <a href={profile.resume} target="_blank" rel="noreferrer" title={`Visit ${profile.name}'s Resume page.`}>
                 <CgNotes className="me-3 fs-2 text-dark" />
               </a>}
             </div>
