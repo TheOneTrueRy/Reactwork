@@ -17,6 +17,8 @@ export function Navbar() {
       await postService.searchPosts(editable)
       await profileService.searchProfiles(editable)
       editable = { query: '' }
+      // @ts-ignore
+      document.getElementById("searchForm").reset();
       navigate('/search')
     }
     catch (error) {
@@ -47,22 +49,12 @@ export function Navbar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      {/* FIXME Searchbar does not clear after search is made. */}
-      <form onSubmit={search} key={editable.id}>
+      <form id="searchForm" onSubmit={search} key={editable.id}>
         <div className="input-group">
           <input type="text" className="form-control bg-light" placeholder="Search..." defaultValue={editable.query} onChange={bindEditable} id="query" name="query" />
           <span className="input-group-text bg-light selectable" onClick={search}><RxMagnifyingGlass className="fs-5" /></span>
         </div>
       </form>
-      {/* <div className="collapse navbar-collapse" id="navbarText">
-        <ul className="navbar-nav me-auto">
-          <li>
-            <Link to={'About'} className="btn text-success lighten-30 selectable text-uppercase">
-              About
-            </Link>
-          </li>
-        </ul>
-      </div > */}
     </nav >
   )
 }

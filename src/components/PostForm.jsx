@@ -19,6 +19,8 @@ function PostForm() {
       window.event.preventDefault()
       await postService.createPost(editable)
       editable = new Post({})
+      // @ts-ignore
+      document.getElementById("postForm").reset();
     }
     catch (error) {
       Pop.error(error.message);
@@ -34,8 +36,7 @@ function PostForm() {
           </Link>
         </div>
         <div className="col-10">
-          {/* FIXME Form Inputs do not reactively clear when editable is set back to empty object on form submission. */}
-          <form onSubmit={createPost} key={editable.id}>
+          <form id="postForm" onSubmit={createPost} key={editable.id}>
             <div className="row">
               <div className="col-12">
                 <textarea required name="body" id="body" defaultValue={editable.body} onChange={bindEditable} rows={5} className="form-control w-100 bg-light" placeholder="Whatcha thinkin?" />
