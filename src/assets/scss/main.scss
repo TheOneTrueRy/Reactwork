@@ -100,3 +100,12 @@ textarea{
 .no-arrow{
   $caret-width: 0
 }
+
+.object-cover-center{
+  object-fit: cover;
+  object-position: center;
+}
+
+.vh-30{
+  height: 30vh;
+}

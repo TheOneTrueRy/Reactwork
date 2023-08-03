@@ -45,7 +45,7 @@ function PostCard({ post }) {
       </div>}
       <div className="col-2 ps-0 text-center">
         <Link to={`profiles/${post.creator.id}`}>
-          <img src={post.creator.picture} alt={`${post.creator.name}'s Profile Picture`} className="post-pfp rounded-circle border border-dark hover" />
+          <img src={post.creator.picture} alt={`${post.creator.name}'s Profile Picture`} className="post-pfp rounded-circle border border-dark hover object-cover-center" />
         </Link>
       </div>
       <div className="col-10 d-flex flex-column justify-content-center g-0">

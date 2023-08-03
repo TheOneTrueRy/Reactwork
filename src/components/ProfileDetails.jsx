@@ -35,12 +35,12 @@ function ProfileDetails({ profile }) {
     <>
       {profile ? <div className="row shadow mb-2 bg-light">
         <div className="col-12 g-0">
-          <img src={profile.coverImg} alt={`${profile.name}'s Cover Image`} className="w-100 vh-25" />
+          <img src={profile.coverImg} alt={`${profile.name}'s Cover Image`} className="w-100 vh-30 object-cover-center" />
         </div>
         <div className="col-12 move-up">
           <div className="row">
             <div className="col-2">
-              <img src={profile.picture} alt={`${profile.name}'s Profile Picture`} className="pfp rounded-circle border border-primary" />
+              <img src={profile.picture} alt={`${profile.name}'s Profile Picture`} className="pfp rounded-circle border border-primary object-cover-center" />
             </div>
             <div className="col-10 d-flex justify-content-end align-items-end">
               {profile.github !== '' && <a href={profile.github} target="_blank" rel="noreferrer" title={`Visit ${profile.name}'s GitHub page.`}>
